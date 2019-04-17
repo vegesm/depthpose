@@ -142,28 +142,3 @@ class HGModel(BaseModel):
 
     def switch_to_eval(self):
         self.netG.eval()
-
-# class EvalOptions(TrainOptions):
-#     def parse(self, args, verbose=False):
-#         if not self.initialized:
-#             self.initialize()
-#
-#         self.opt = self.parser.parse_args(args)
-#         self.opt.isTrain = self.isTrain   # train or test
-#
-#         str_ids = self.opt.gpu_ids.split(',')
-#         self.opt.gpu_ids = []
-#         for str_id in str_ids:
-#             id = int(str_id)
-#             if id >= 0:
-#                 self.opt.gpu_ids.append(id)
-#
-#         args = vars(self.opt)
-#
-#         if verbose:
-#             print('------------ Options -------------')
-#             for k, v in sorted(args.items()):
-#                 print('%s: %s' % (str(k), str(v)))
-#             print('-------------- End ----------------')
-#
-#         return self.opt

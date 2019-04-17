@@ -14,7 +14,7 @@ def torch_predict(model, input, batch_size=None, device='cuda'):
 
     :param model: PyTorch Model(nn.Module)
     :param input: a numpy array or a PyTorch dataloader
-    :param batch_size: if input was a numpy array, this is the batch size used for evaluation
+    :param batch_size: if ``input`` is a numpy array, this is the batch size used for evaluation
     :return:
     """
     model.eval()

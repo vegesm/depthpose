@@ -8,7 +8,7 @@ import numpy as np
 
 from util.mx_tools import calibration_matrix
 
-MUPO_TS_PATH = '/home/vegesm/databases/mupots_3dxxx'
+MUPO_TS_PATH = None
 
 OPENPOSE25_NAMES = np.array(['nose', 'neck', 'right_shoulder', 'right_elbow', 'right_wrist', 'left_shoulder', 'left_elbow', 'left_wrist',
                              'hip', 'right_hip', 'right_knee', 'right_ankle', 'left_hip', 'left_knee', 'left_ankle',

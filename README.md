@@ -4,7 +4,6 @@ This repository contains the trained model for the paper. Parts of the code are 
 
 ## Prerequisites
 The code was written in Python 2, using the following packages:
-- nipgutils
 - torch 0.4.1
 - numpy 1.15.4
 - OpenCV 3
@@ -14,7 +13,7 @@ You will need the MuPoTS-3D dataset downloaded from [here](http://gvv.mpi-inf.mp
 
 The pretrained model can be downloaded from [here](https://drive.google.com/open?id=14FpxGlawafRaegeqg1aA6CZUfhKnZWa-). You must extract the contents in the base directory of Dephtpose.
 
-Note if you want to run the model on your own data, you'll have to install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). For training the model, commit e59215a219a7328a6b9eb0af14b41c35564d399d was used.
+Note, if you want to run the model on your own data, you'll have to install [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). For training the model, commit e59215a219a7328a6b9eb0af14b41c35564d399d was used.
 
 ## Running the model
 

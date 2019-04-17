@@ -9,7 +9,7 @@ from util.experiments import model_state_path_for, preprocess_params
 class End2EndModel(torch.nn.Module):
     def __init__(self, params):
         """
-        params.trunk_finetune controls which layers are frozen. top_conv means the very last convolutional layer,
+        params.trunk_finetune controls which layers are trained. top_conv means the very last convolutional layer,
         hg_top means the last convolutional layer and the last layer in the hourglass model together with the
         last block in the residual path.
         """
@@ -49,7 +49,7 @@ class End2EndModel(torch.nn.Module):
         """
         depths = self.trunk_net(imgs).squeeze(dim=1)  # need to remove channel dimension
 
-        points = depths[self.frames[:len(imgs)][:, :poses.shape[1]], poses[:, :, :, 1], poses[:, :, :, 0]]
-        martinez_input = torch.cat([normed_poses[good_pose], points[good_pose]], dim=1)
-        martinez_input = (martinez_input - self.mean2d) / self.std2d
-        return self.pose_net(martinez_input)
+        depth_at_kps = depths[self.frames[:len(imgs)][:, :poses.shape[1]], poses[:, :, :, 1], poses[:, :, :, 0]]
+        posenet_input = torch.cat([normed_poses[good_pose], depth_at_kps[good_pose]], dim=1)
+        posenet_input = (posenet_input - self.mean2d) / self.std2d
+        return self.pose_net(posenet_input)
